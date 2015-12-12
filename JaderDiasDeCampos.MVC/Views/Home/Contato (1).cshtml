@@ -1,0 +1,97 @@
+﻿
+<div class="heading-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="wow bounceInDown" data-wow-delay="0.4s">
+                    <div class="section-heading">
+                        <h2>Entre em Contato</h2>
+                        <i class="fa fa-2x fa-angle-down"></i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-2 col-lg-offset-5">
+            <hr class="marginbot-50">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="boxed-grey">
+                <form id="contact-form" method="post" action="/api/Email">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">
+                                    Nome
+                                </label>
+                                <input type="text" class="form-control" id="name" placeholder="Informe seu nome" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    E-mail
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </span>
+                                    <input type="email" class="form-control" id="email" placeholder="Informe seu e-mail" required="required" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">
+                                    Assunto
+                                </label>
+                                <select id="subject" name="subject" class="form-control" required="required">
+                                    <option value="" selected="">Selecione:</option>
+                                    <option value="Proposta de Emprego">Proposta de Emprego</option>
+                                    <option value="Proposta Comercial">Proposta Comercial</option>
+                                    <option value="Parceria">Parceria</option>
+                                    <option value="Outros Assuntos">Outros Assuntos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">
+                                    Mensagem
+                                </label>
+                                <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                          placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-skin pull-right" id="btnEnviarMsg">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="widget-contact">
+                <h5>Meus Contatos</h5>
+
+                <address>
+                    <strong>São Paulo - S.P.</strong><br>
+                    <abbr title="Telefone Celular">Cel:</abbr> (11) 99223-9243
+                </address>
+
+                <address>
+                    <strong>Email</strong><br>
+                    <a href="mailto:jadercampos@gmail.com">jadercampos@gmail.com</a>
+                </address>
+                @Html.Partial("~/Views/Shared/Social.cshtml")
+            </div>
+        </div>
+    </div>
+
+</div>

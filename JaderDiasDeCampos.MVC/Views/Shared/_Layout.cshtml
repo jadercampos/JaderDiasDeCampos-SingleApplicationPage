@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link href=’http://jadercampos.azurewebsites.net/favicon.ico’ rel='shortcut icon' type='image/x-icon' />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Jader Dias de Campos - Analista de Sistemas</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    @RenderBody()
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", required: false)
+    <script>
+        $('#myTab a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+        $("#contact-form").submit(function (e) {
+            e.preventDefault();
+            var email = new Object();
+            email.Nome = $('#name').val();
+            email.Email = $("#email").val();
+            email.Assunto = $("#subject").val();
+            email.Mensagem = $("#message").val();
+            $.ajax({
+                url: e.currentTarget.action,
+                type: "Post",
+                dataType: 'json',
+                data: JSON.stringify(email),
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    alert('A sua mensagem foi enviada com sucesso!\n\nObrigado!');
+                    $('#name').val('');
+                    $("#email").val('');
+                    $("#subject").val('');
+                    $("#message").val('');
+                },
+                error: function () { alert('Desculpe, mas houve um erro ao enviar a sua mensagem!\n\nTente enviar um e-mail para: jadercampos@gmail.com.\n\nObrigado!'); }
+            });
+        });
+    </script>
+</body>
+
+</html>

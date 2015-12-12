@@ -1,0 +1,49 @@
+﻿ <!-- Preloader -->
+<div id="preloader">
+    <div id="load"></div>
+</div>
+<!-- /Preloader -->
+<!-- NavBar -->
+    @Html.Partial("NavBar")
+<!-- /NavBar -->
+<!-- Section: intro -->
+<section id="intro" class="intro">
+    @Html.Partial("intro")
+</section>
+<!-- /Section: intro -->
+<!-- Section: sobre -->
+<section id="sobre" class="home-section text-center">
+    @Html.Partial("Sobre")
+</section>
+<!-- /Section: sobre -->
+<!-- Section: portfolio -->
+<section id="portfolio" class="home-section text-center bg-gray">
+    @Html.Partial("Portfolio")
+</section>
+<!-- /Section: portfolio -->
+<!-- Section: contato -->
+<section id="contato" class="home-section text-center">
+    @Html.Partial("Contato")
+</section>
+<!-- /Section: contato -->
+<!-- Rodape -->
+    @Html.Partial("~/Views/Shared/Rodape.cshtml")
+<!-- /Rodape -->
+<!-- Modal Curriculum-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Curriculum Vitae - Resumo</h4>
+            </div>
+            <div class="modal-body">
+                @Html.Partial("Curriculum")
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal Curriculum-->
